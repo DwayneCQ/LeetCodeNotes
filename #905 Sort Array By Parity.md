@@ -42,8 +42,8 @@ class Solution(object):
         A.sort(key = lambda x: x % 2)
         return A
 ```
-官方的解法使用了``sort()``，通过一个``lambda``作为筛选条件。
-下面贴出``sort()``的函数介绍
+官方的解法使用了 ``sort()`` ，通过一个 ``lambda`` 作为筛选条件。
+下面贴出 ``sort()`` 的函数介绍
 ```
 sort(*, key=None, reverse=False)
 This method sorts the list in place, using only < comparisons between items. Exceptions are not suppressed - if any comparison operations fail, the entire sort operation will fail (and the list will likely be left in a partially modified state).  
