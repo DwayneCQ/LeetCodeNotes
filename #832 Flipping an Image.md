@@ -64,7 +64,7 @@ class Solution(object):
 
 后来在看Discuss的时候发现绝大多数人在invert步骤用的都是``if``语句来判断，但是我测试发现并没有我的快。于是我研究了一下。
 
-![pic](pics/#832-1.png)
+![pic](https://github.com/DwayneCQ/LeetCodeNotes/blob/master/pics/%23832-1.png)
 
 上图是十次用if和减法做相同的事情，平均所需时间的图表。可以看见直接用减法做速度要快一点，我重复了多遍，几乎都是这个结果。
 所以以后喷到类似的问题的时候，该用丑一点的方法就用丑一点的方法，毕竟比较快。
