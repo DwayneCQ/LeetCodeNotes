@@ -31,14 +31,12 @@ class Solution(object):
         """
         selfdiv = []
         for i in range(left, right + 1):
-            ls = list(str(i))
+            ls = str(i)
             flag = True
             for j in ls:
-                if int(j) == 0:
+                if j == '0' or i % int(j) != 0:
                     flag = False
-                    break
-                elif i % int(j) != 0:
-                    flag = False
+                    break 
             if flag == True:
                 selfdiv.append(i)
         return selfdiv
@@ -61,9 +59,35 @@ class Solution(object):
                 r = n % 10
                 if r == 0 or i % r:
                     break
-                n = n / 10
+                wn = n / 10
             else:
                 result.append(i)
         return result
 ```
-在discuss中看到一个思路非常巧妙的解法。
+在discuss中看到一个思路非常巧妙的解法。但是不知道为什么自己在本地运行的时候没有返回值。
+
+```python
+class Solution(object):
+    def selfDividingNumbers(self, left, right):
+        def self_dividing(n):
+            for d in str(n):
+                if d == '0' or n % int(d) > 0:
+                    return False
+            return True
+        """
+        Alternate implementation of self_dividing:
+        def self_dividing(n):
+            x = n
+            while x > 0:
+                x, d = divmod(x, 10)
+                if d == 0 or n % d > 0:
+                    return False
+            return True
+        """
+        ans = []
+        for n in range(left, right + 1):
+            if self_dividing(n):
+                ans.append(n)
+        return ans #Equals filter(self_dividing, range(left, right+1))
+```
+官方给出的解法跟我的思路一样。
